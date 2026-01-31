@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    {{ with .Params.hero }}
+    <h1>{{ .title }}</h1>
+    <p class="tagline">{{ .tagline }}</p>
+    {{ end }}
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+    {{ with .Params.about }}
+    <h2>{{ .title }}</h2>
+    <div class="about-content">
+      {{ .content | markdownify }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ if $posts }}
+<section class="recent-posts">
+  <div class="container">
+    <h2>Recent Posts</h2>
+    <ul class="post-list">
+      {{ range first 3 $posts }}
+      <li class="post-item">
+        <a href="{{ .Permalink }}">
+          <span class="post-title">{{ .Title }}</span>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    <p class="view-all"><a href="/blog/">View all posts &rarr;</a></p>
+  </div>
+</section>
+{{ end }}
+{{ end }}
