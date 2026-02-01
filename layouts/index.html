@@ -9,9 +9,9 @@
       <h1>{{ .title }}</h1>
       <p class="tagline">{{ .tagline }}</p>
       {{ end }}
-      {{ with .Params.about }}
+      {{ with .Params.content }}
       <div class="about-content">
-        {{ .content | markdownify }}
+        {{ . | markdownify }}
       </div>
       {{ end }}
     </div>
