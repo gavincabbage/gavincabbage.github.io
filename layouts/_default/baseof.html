@@ -9,7 +9,12 @@
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}
-  <div id="lightbox" class="lightbox"><img src="" alt=""></div>
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+    <img src="" alt="">
+    <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
+  </div>
   <script src="/js/lightbox.js"></script>
 </body>
 </html>
