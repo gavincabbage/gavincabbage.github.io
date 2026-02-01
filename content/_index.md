@@ -2,15 +2,13 @@
 title: "Home"
 hero:
   title: "Gavin Cabbage"
-  tagline: "Software and things outside"
+  tagline: "Watching the world burn since 1992"
 about:
   title: "About"
   content: |
-    This is my website. There are many like it but, but this one is mine.
+    This is my website. There are many like it but, but this one is mine. Welcome to it.
  
-    I’m a software engineer based in Massachusetts, where I live with my partner Molly and our poodles Mausbär and Blackbird.
+    I'm a software engineer based in Massachusetts, where I live with my partner Molly and our poodles {{< imglink src="images/dogs/maus.png" text="Mausbär" >}} and {{< imglink src="images/dogs/bird.png" text="Blackbird" >}}.For
 
-    My favorite place to be is outside, tending to our chickens and vegetable garden or riding the local trails on my mountain bike. This summer I’ll be building a new blueberry enclosure.
-
-    Email me or use the form below to get in touch.
+    Send me an [email](mailto:contact05102020@gavincabbage.com) or find me on [GitHub](https://github.com/gavincabbage) or [LinkedIn](https://www.linkedin.com/in/gavincabbage/).
 ---

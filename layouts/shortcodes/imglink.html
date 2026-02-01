@@ -1,0 +1,4 @@
+{{- $src := .Get "src" -}}
+{{- $text := .Get "text" -}}
+{{- $img := resources.Get $src -}}
+<a href="{{ $img.RelPermalink }}" class="lightbox-link">{{ $text }}</a>
