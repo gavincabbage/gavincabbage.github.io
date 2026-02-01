@@ -130,9 +130,9 @@ main {
 }
 
 .about-content {
+  text-align: left;
   color: #444;
 }
-
 
 .about-content p:last-child {
   margin-bottom: 0;
@@ -163,6 +163,10 @@ main {
 
 .post-item a:hover {
   color: #999;
+}
+
+.post-title {
+  text-decoration: underline;
 }
 
 .post-item time {
@@ -224,6 +228,22 @@ main {
 .post-header time {
   color: #999;
   font-size: 0.875rem;
+}
+
+.post-tags {
+  color: #999;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.post-tags a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.post-tags a:hover {
+  color: #666;
 }
 
 .post-content {

@@ -1,5 +1,6 @@
 ---
 title: "Iceland"
+tags: ["travel", "pictures"]
 date: 2026-02-01
 ---
 

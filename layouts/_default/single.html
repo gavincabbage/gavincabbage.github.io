@@ -8,6 +8,9 @@
     {{ .Content }}
   </div>
   <footer class="post-footer">
+    {{- with .Params.tags }}
+    <div class="post-tags">{{ range $i, $tag := . }}{{- if $i }} {{ end }}<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">#{{ $tag }}</a>{{ end }}</div>
+    {{- end }}
     <a href="/stuff/" class="nav-link">&larr; Back</a>
   </footer>
 </article>
