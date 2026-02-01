@@ -16,6 +16,6 @@ build:
 clean:
 	rm -rf public resources
 
-# Create new blog post (usage: make new POST=my-post-title)
+# Create new post (usage: make new POST=my-post-title)
 new:
-	hugo new content blog/$(POST).md
+	hugo new content stuff/$(POST).md

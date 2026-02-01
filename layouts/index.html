@@ -1,29 +1,28 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="container">
-    {{ with .Params.hero }}
-    <h1>{{ .title }}</h1>
-    <p class="tagline">{{ .tagline }}</p>
-    {{ end }}
-  </div>
-</section>
-
-<section class="about">
-  <div class="container">
-    {{ with .Params.about }}
-    <h2>{{ .title }}</h2>
-    <div class="about-content">
-      {{ .content | markdownify }}
+<section class="intro">
+  <div class="container intro-grid">
+    <div class="intro-photo">
+      <img src="/images/profile.png" alt="Gavin Cabbage" class="profile-image">
     </div>
-    {{ end }}
+    <div class="intro-text">
+      {{ with .Params.hero }}
+      <h1>{{ .title }}</h1>
+      <p class="tagline">{{ .tagline }}</p>
+      {{ end }}
+      {{ with .Params.about }}
+      <div class="about-content">
+        {{ .content | markdownify }}
+      </div>
+      {{ end }}
+    </div>
   </div>
 </section>
 
-{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ $posts := where .Site.RegularPages "Section" "stuff" }}
 {{ if $posts }}
 <section class="recent-posts">
   <div class="container">
-    <h2>Recent Posts</h2>
+    <h2>Other Stuff</h2>
     <ul class="post-list">
       {{ range first 3 $posts }}
       <li class="post-item">
@@ -34,7 +33,7 @@
       </li>
       {{ end }}
     </ul>
-    <p class="view-all"><a href="/blog/">View all posts &rarr;</a></p>
+    <p class="view-all"><a href="/stuff/">View all &rarr;</a></p>
   </div>
 </section>
 {{ end }}

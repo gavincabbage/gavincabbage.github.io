@@ -3,7 +3,8 @@
     "allow": [
       "Bash(hugo version:*)",
       "Bash(go version:*)",
-      "Bash(hugo:*)"
+      "Bash(hugo:*)",
+      "Bash(curl:*)"
     ]
   }
 }

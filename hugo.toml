@@ -1,20 +1,10 @@
 baseURL = 'https://gavincabbage.github.io/'
 languageCode = 'en-us'
-title = 'Gavin Cabbage'
+title = 'gavincabbage.com'
 
 [params]
-  description = 'Personal website and blog'
+  description = 'My website'
   author = 'Gavin Cabbage'
-
-[menu]
-  [[menu.main]]
-    name = 'Home'
-    url = '/'
-    weight = 1
-  [[menu.main]]
-    name = 'Blog'
-    url = '/blog/'
-    weight = 2
 
 [markup]
   [markup.highlight]
