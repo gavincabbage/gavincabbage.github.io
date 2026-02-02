@@ -1,0 +1,22 @@
+{{- if not .IsHome -}}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/" class="breadcrumb-link">home</a>
+    </li>
+
+    {{- if eq .Kind "term" -}}
+      <li class="breadcrumb-item">
+        <a href="/{{ .Data.Plural }}/" class="breadcrumb-link">{{ .Data.Plural | lower }}</a>
+      </li>
+
+    {{- else if eq .Kind "page" -}}
+      {{- with .Section -}}
+      <li class="breadcrumb-item">
+        <a href="/{{ . }}/" class="breadcrumb-link">{{ . | lower }}</a>
+      </li>
+      {{- end -}}
+    {{- end -}}
+  </ol>
+</nav>
+{{- end -}}

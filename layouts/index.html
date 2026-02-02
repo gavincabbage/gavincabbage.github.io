@@ -29,7 +29,7 @@
     <ul class="post-list">
       {{ range first 3 $posts }}
       <li class="post-item">
-        <a href="{{ .Permalink }}">
+    <a href="{{ .RelPermalink }}">
           <span class="post-title">{{ .Title }}</span>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         </a>
