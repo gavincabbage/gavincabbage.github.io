@@ -3,6 +3,7 @@
 {{- $pattern := slice 1 2 2 1 1 1 2 1 1 -}}
 <div class="gallery">
   {{- range $i, $img := $images -}}
+    {{- if not (strings.HasSuffix (path.Base $img.Name) ".md") -}}
     {{- $resized := $img.Resize "1200x webp q85" -}}
     {{- $ratio := div (float $img.Width) (float $img.Height) -}}
     {{- $cols := index $pattern (mod $i (len $pattern)) -}}
@@ -15,8 +16,31 @@
     {{- else if eq $cols 3 -}}
       {{- $class = "gallery-item gallery-panorama" -}}
     {{- end -}}
-    <a href="{{ $img.RelPermalink }}" class="{{ $class }}">
-      <img src="{{ $resized.RelPermalink }}" alt="" loading="lazy">
+    {{- $basename := path.Base $img.Name -}}
+    {{- $captionPath := printf "%s/%s.md" $folder $basename -}}
+    {{- $caption := resources.Get $captionPath -}}
+    {{- $title := "" -}}
+    {{- $desc := "" -}}
+    {{- with $caption -}}
+      {{- $lines := split .Content "\n" -}}
+      {{- $firstLine := index $lines 0 -}}
+      {{- if $firstLine -}}
+        {{- $title = $firstLine -}}
+        {{- if gt (len $lines) 1 -}}
+          {{- $descLines := after 1 $lines -}}
+          {{- $desc = delimit $descLines "\n" | markdownify -}}
+        {{- end -}}
+      {{- else -}}
+        {{- /* Empty first line = no title, rest is description */ -}}
+        {{- if gt (len $lines) 1 -}}
+          {{- $descLines := after 1 $lines -}}
+          {{- $desc = delimit $descLines "\n" | markdownify -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <a href="{{ $img.RelPermalink }}" class="{{ $class }}"{{ with $title }} data-title="{{ . }}"{{ end }}{{ with $desc }} data-description="{{ . }}"{{ end }}>
+      <img src="{{ $resized.RelPermalink }}" alt="{{ $title }}" loading="lazy">
     </a>
+    {{- end -}}
   {{- end -}}
 </div>
