@@ -1,7 +1,7 @@
 ---
 title: "Hello, World!"
 tags: ["test"]
-date: 2006-01-26
+date: 2026-01-01
 draft: false
 ---
 

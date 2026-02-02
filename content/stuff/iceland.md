@@ -1,7 +1,7 @@
 ---
 title: "Iceland"
 tags: ["travel", "pictures"]
-date: 2019-04-15
+date: 2026-01-02
 ---
 
 In 2019 I went to Iceland. It was like another planet. A beautiful one.
