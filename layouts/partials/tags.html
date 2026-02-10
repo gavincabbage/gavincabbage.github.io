@@ -1,0 +1,3 @@
+{{- with .Site.Taxonomies.tags }}
+<div class="post-tags">{{ range $tag, $pages := . }}{{ if ne $tag "test" }}<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">#{{ $tag }}</a> {{ end }}{{ end }}</div>
+{{- end }}

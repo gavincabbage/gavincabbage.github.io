@@ -4,6 +4,7 @@
   <header class="page-header">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+    {{- partial "tags.html" . -}}
   </header>
   <ul class="post-list">
     {{ range .Pages }}

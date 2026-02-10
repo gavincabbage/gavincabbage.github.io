@@ -1,11 +1,11 @@
 ---
 hero:
   title: "Hi, I'm Gavin"
-  tagline: "Watching the world burn since 1992"
+  tagline: "Chook-wrangler 🐓 and software engineer"
 content: |
   This is my website. There are many like it but, but this one is mine. Welcome!
   
-  Some things you might find interesting:
+  Some things I do:
     - Our poodles: {{< imglink src="images/dogs/maus.png" text="Mausbär" >}} and {{< imglink src="images/dogs/bird.png" text="Blackbird" >}}
     - [The Friends of the WWII Veterans Memorial Trail](https://ww2railtrail.org)
     - [Norton Finance Committee](https://www.nortonma.org/finance-committee)

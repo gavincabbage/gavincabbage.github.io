@@ -23,9 +23,7 @@
 <section class="recent-posts">
   <div class="container">
     <h2>Other Stuff</h2>
-    {{- with .Site.Taxonomies.tags }}
-    <div class="post-tags">{{ range $tag, $pages := . }}<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">#{{ $tag }}</a> {{ end }}</div>
-    {{- end }}
+    {{- partial "tags.html" . -}}
     <ul class="post-list">
       {{ range first 3 $posts }}
       <li class="post-item">
