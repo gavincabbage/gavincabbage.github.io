@@ -1,5 +1,11 @@
 {{- $folder := .Get "folder" -}}
-{{- $images := resources.Match (printf "%s/*" $folder) -}}
+{{- $allResources := resources.Match (printf "%s/*" $folder) -}}
+{{- $images := slice -}}
+{{- range $allResources -}}
+  {{- if not (strings.HasSuffix (path.Base .Name) ".md") -}}
+    {{- $images = $images | append . -}}
+  {{- end -}}
+{{- end -}}
 {{- $pattern := slice 1 2 2 1 1 1 2 1 1 -}}
 <div class="gallery">
   {{- range $i, $img := $images -}}
@@ -7,6 +13,10 @@
     {{- $resized := $img.Resize "1200x webp q85" -}}
     {{- $ratio := div (float $img.Width) (float $img.Height) -}}
     {{- $cols := index $pattern (mod $i (len $pattern)) -}}
+    {{- $remaining := sub (len $images) $i -}}
+    {{- if lt $remaining 3 -}}
+      {{- $cols = $remaining -}}
+    {{- end -}}
     {{- if ge $ratio 2.5 -}}
       {{- $cols = 3 -}}
     {{- end -}}

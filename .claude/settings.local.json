@@ -4,7 +4,8 @@
       "Bash(hugo version:*)",
       "Bash(go version:*)",
       "Bash(hugo:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(make serve:*)"
     ]
   }
 }

@@ -1,6 +1,7 @@
 baseURL = 'https://gavincabbage.com/'
 languageCode = 'en-us'
 title = 'gavincabbage.com'
+ignoreFiles = [".DS_Store", "README.md"]
 
 [params]
   description = 'My website'
